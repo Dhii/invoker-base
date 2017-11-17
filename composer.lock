@@ -4,8 +4,98 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5baf858763370163f1e2dacfc83c713b",
+    "content-hash": "acbdda381bd734d375e911662a411b35",
     "packages": [
+        {
+            "name": "dhii/exception",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/exception.git",
+                "reference": "160d0f5086982fe43d963ea9a1c60c3c2bdf4169"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/exception/zipball/160d0f5086982fe43d963ea9a1c60c3c2bdf4169",
+                "reference": "160d0f5086982fe43d963ea9a1c60c3c2bdf4169",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/exception-interface": "^0.1",
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Exception\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Standards-compliant exception classes",
+            "time": "2017-09-05 08:24:01"
+        },
+        {
+            "name": "dhii/exception-helper-base",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/exception-helper-base.git",
+                "reference": "9275a60ef9940edaf2442e673ddf3035cdefbdeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/exception-helper-base/zipball/9275a60ef9940edaf2442e673ddf3035cdefbdeb",
+                "reference": "9275a60ef9940edaf2442e673ddf3035cdefbdeb",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/exception": "dev-develop",
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "dhii/stringable-interface": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "suggest": {
+                "dhii/stringable-interface": "To be able to pass stringables instead of strings in some cases"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Exception\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Base functionality for exception helpers",
+            "time": "2017-09-05 07:47:07"
+        },
         {
             "name": "dhii/exception-interface",
             "version": "v0.1",
@@ -48,6 +138,93 @@
             ],
             "description": "Interfaces for most common exceptions",
             "time": "2017-09-01T18:00:26+00:00"
+        },
+        {
+            "name": "dhii/i18n-helper-base",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/i18n-helper-base.git",
+                "reference": "2738cd708429af2c05939c3acedf55e3ef83083d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/i18n-helper-base/zipball/2738cd708429af2c05939c3acedf55e3ef83083d",
+                "reference": "2738cd708429af2c05939c3acedf55e3ef83083d",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/i18n-interface": "^0.1",
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\I18n\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "A base for internationalization consumers",
+            "time": "2017-08-24 07:54:03"
+        },
+        {
+            "name": "dhii/i18n-interface",
+            "version": "v0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/i18n-interface.git",
+                "reference": "2b8e842fdf1ba8888a3efecaea3b84691c5ee1e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/i18n-interface/zipball/2b8e842fdf1ba8888a3efecaea3b84691c5ee1e0",
+                "reference": "2b8e842fdf1ba8888a3efecaea3b84691c5ee1e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/data-key-value-aware-interface": "^0.1",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "dhii/stringable-interface": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\I18n\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Interfaces for internationalization.",
+            "time": "2017-03-13T12:08:29+00:00"
         },
         {
             "name": "dhii/invoker-abstract",
@@ -2241,7 +2418,9 @@
     "stability-flags": {
         "dhii/invoker-interface": 20,
         "dhii/invoker-abstract": 20,
-        "dhii/normalization-helper-base": 20
+        "dhii/normalization-helper-base": 20,
+        "dhii/i18n-helper-base": 20,
+        "dhii/exception-helper-base": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
