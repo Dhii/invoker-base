@@ -32,11 +32,32 @@ class CommandInvokerExceptionTest extends TestCase
      */
     public function createInstance($methods = [], $disableOriginalConstructor = true)
     {
-        $methods = $this->mergeValues($methods, []);
+        $methods = $this->mergeValues($methods, [
+            '_normalizeString',
+            '_normalizeInt',
+            '__',
+        ]);
         $builder = $this->getMockBuilder(static::TEST_SUBJECT_CLASSNAME)
             ->setMethods($methods);
         $disableOriginalConstructor && $builder->disableOriginalConstructor();
         $mock = $builder->getMock();
+
+        $mock->method('_normalizeString')
+            ->will($this->returnCallback(function ($string) {
+                return (string) $string;
+            }));
+        $mock->method('_normalizeInt')
+            ->will($this->returnCallback(function ($int) {
+                return intval($int);
+            }));
+        $mock->method('_normalizeArray')
+            ->will($this->returnCallback(function ($array) {
+                return $array;
+            }));
+        $mock->method('__')
+            ->will($this->returnCallback(function ($message) {
+                return $message;
+            }));
 
         return $mock;
     }
