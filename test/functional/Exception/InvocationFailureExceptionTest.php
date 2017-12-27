@@ -122,7 +122,9 @@ class InvocationFailureExceptionTest extends TestCase
         $code = rand(1, 99);
         $previous = $this->createException('inner-message-');
         $invoker = $this->createCommandInvoker();
-        $subject = $this->createInstance(null, [$message, $code, $previous, $invoker], false);
+        $command = $this->createStringable(uniqid('command-'));
+        $args = array_map(function () { return rand(1, 99); }, array_fill(0, rand(1, 10), null));
+        $subject = $this->createInstance(null, [$message, $code, $previous, $invoker, $command, $args], false);
         $_subject = $this->reflect($subject);
 
         try {
@@ -132,6 +134,8 @@ class InvocationFailureExceptionTest extends TestCase
             $this->assertEquals($code, $e->getCode(), 'Wrong code retrieved from subject');
             $this->assertEquals($previous, $e->getPrevious(), 'Wrong inner exception retrieved from subject');
             $this->assertEquals($invoker, $e->getCommandInvoker(), 'Wrong invoker retrieved from subject');
+            $this->assertEquals($command, $e->getCommand(), 'Wrong command retrieved from subject');
+            $this->assertEquals($args, $e->getArgs(), 'Wrong args retrieved from subject');
         }
     }
 }
