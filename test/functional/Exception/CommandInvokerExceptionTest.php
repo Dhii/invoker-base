@@ -3,7 +3,7 @@
 namespace Dhii\Invocation\FuncTest\Exception;
 
 use Dhii\Invocation\CommandInvokerInterface;
-use Dhii\Invocation\Exception\AbstractBaseCommandInvokerException;
+use Dhii\Invocation\Exception\CommandInvokerExceptionInterface;
 use Xpmock\TestCase;
 use Dhii\Invocation\Exception\CommandInvokerException as TestSubject;
 use Exception as RootException;
@@ -107,7 +107,7 @@ class CommandInvokerExceptionTest extends TestCase
 
         try {
             throw $subject;
-        } catch (AbstractBaseCommandInvokerException $e) {
+        } catch (CommandInvokerExceptionInterface $e) {
             $this->assertEquals($message, $e->getMessage(), 'Wrong message retrieved from subject');
             $this->assertEquals($code, $e->getCode(), 'Wrong code retrieved from subject');
             $this->assertEquals($previous, $e->getPrevious(), 'Wrong inner exception retrieved from subject');
