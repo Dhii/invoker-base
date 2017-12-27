@@ -94,6 +94,24 @@ class InvocationFailureExceptionTest extends TestCase
     }
 
     /**
+     * Creates a new stringable object.
+     *
+     * @since [*next-version*]
+     *
+     * @param string $string The string to wrap.
+     *
+     * @return Stringable The new stringable.
+     */
+    public function createStringable($string = '')
+    {
+        $mock = $this->mock('Dhii\Util\String\StringableInterface')
+            ->__toString($string)
+            ->new();
+
+        return $mock;
+    }
+
+    /**
      * Tests that the parameter-less constructor doesn't fail.
      *
      * @since [*next-version*]
