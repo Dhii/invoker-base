@@ -111,7 +111,7 @@ class CommandInvokerExceptionTest extends TestCase
             $this->assertEquals($message, $e->getMessage(), 'Wrong message retrieved from subject');
             $this->assertEquals($code, $e->getCode(), 'Wrong code retrieved from subject');
             $this->assertEquals($previous, $e->getPrevious(), 'Wrong inner exception retrieved from subject');
-            $this->assertEquals($invoker, $e->getCommandInvoker(), 'Wrong message retrieved from subject');
+            $this->assertEquals($invoker, $e->getCommandInvoker(), 'Wrong invoker retrieved from subject');
         }
     }
 }
