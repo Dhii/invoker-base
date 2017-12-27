@@ -33,12 +33,14 @@ class CommandInvokerExceptionTest extends TestCase
      */
     public function createInstance($methods = [], $constructorArgs = [], $disableOriginalConstructor = true)
     {
-        $methods = $this->mergeValues($methods, []);
+        $methods = is_array($methods)
+                ? $this->mergeValues($methods, [])
+                : $methods;
         $builder = $this->getMockBuilder(static::TEST_SUBJECT_CLASSNAME)
             ->setMethods($methods)
             ->setConstructorArgs($constructorArgs);
         $disableOriginalConstructor && $builder->disableOriginalConstructor();
-        $mock = $builder->getMockForAbstractClass();
+        $mock = $builder->getMock();
 
         return $mock;
     }
@@ -102,7 +104,7 @@ class CommandInvokerExceptionTest extends TestCase
         $code = rand(1, 99);
         $previous = $this->createException('inner-message-');
         $invoker = $this->createCommandInvoker();
-        $subject = $this->createInstance([], [$message, $code, $previous, $invoker], false);
+        $subject = $this->createInstance(null, [$message, $code, $previous, $invoker], false);
         $_subject = $this->reflect($subject);
 
         try {
