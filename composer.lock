@@ -114,12 +114,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/exception-interface.git",
-                "reference": "606a206662047f6f33c6d45ad79dfef37175cf2d"
+                "reference": "0605da67fad415560023ff4d387f310642f7648e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/exception-interface/zipball/606a206662047f6f33c6d45ad79dfef37175cf2d",
-                "reference": "606a206662047f6f33c6d45ad79dfef37175cf2d",
+                "url": "https://api.github.com/repos/Dhii/exception-interface/zipball/0605da67fad415560023ff4d387f310642f7648e",
+                "reference": "0605da67fad415560023ff4d387f310642f7648e",
                 "shasum": ""
             },
             "require": {
@@ -154,7 +154,7 @@
                 }
             ],
             "description": "Interfaces for most common exceptions",
-            "time": "2017-12-08T09:40:26+00:00"
+            "time": "2017-12-28T08:50:05+00:00"
         },
         {
             "name": "dhii/i18n-helper-base",
