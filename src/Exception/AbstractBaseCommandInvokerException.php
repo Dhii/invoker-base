@@ -4,8 +4,6 @@ namespace Dhii\Invocation\Exception;
 
 use Exception as RootException;
 use Dhii\Invocation\CommandInvokerAwareTrait;
-use Dhii\Util\Normalization\NormalizeStringCapableTrait;
-use Dhii\Util\Normalization\NormalizeIntCapableTrait;
 use Dhii\Exception\CreateInvalidArgumentExceptionCapableTrait;
 use Dhii\I18n\StringTranslatingTrait;
 
@@ -22,20 +20,6 @@ abstract class AbstractBaseCommandInvokerException extends RootException impleme
      * @since [*next-version*]
      */
     use CommandInvokerAwareTrait;
-
-    /*
-     * Adds string normalization functionality.
-     *
-     * @since [*next-version*]
-     */
-    use NormalizeStringCapableTrait;
-
-    /*
-     * Adds integer normalization functionality.
-     *
-     * @since [*next-version*]
-     */
-    use NormalizeIntCapableTrait;
 
     /*
      * Adds internal Invalid Argument Exception factory.

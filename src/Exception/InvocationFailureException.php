@@ -7,6 +7,8 @@ use Dhii\Invocation\CommandInvokerInterface;
 use Dhii\Invocation\ArgsAwareTrait;
 use Dhii\Invocation\CommandAwareTrait;
 use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
+use Dhii\Util\Normalization\NormalizeStringCapableTrait;
+use Dhii\Util\Normalization\NormalizeIntCapableTrait;
 
 /**
  * An exception that occurs in relation to a command invoker.
@@ -15,6 +17,20 @@ use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
  */
 class InvocationFailureException extends AbstractBaseCommandInvokerException implements InvocationFailureExceptionInterface
 {
+    /*
+     * Adds string normalization functionality.
+     *
+     * @since [*next-version*]
+     */
+    use NormalizeStringCapableTrait;
+
+    /*
+     * Adds integer normalization functionality.
+     *
+     * @since [*next-version*]
+     */
+    use NormalizeIntCapableTrait;
+
     /*
      * Adds internal command awareness.
      *

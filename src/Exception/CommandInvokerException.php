@@ -4,6 +4,8 @@ namespace Dhii\Invocation\Exception;
 
 use Exception as RootException;
 use Dhii\Invocation\CommandInvokerInterface;
+use Dhii\Util\Normalization\NormalizeStringCapableTrait;
+use Dhii\Util\Normalization\NormalizeIntCapableTrait;
 
 /**
  * An exception that occurs in relation to a command invoker.
@@ -12,6 +14,20 @@ use Dhii\Invocation\CommandInvokerInterface;
  */
 class CommandInvokerException extends AbstractBaseCommandInvokerException
 {
+    /*
+     * Adds string normalization functionality.
+     *
+     * @since [*next-version*]
+     */
+    use NormalizeStringCapableTrait;
+
+    /*
+     * Adds integer normalization functionality.
+     *
+     * @since [*next-version*]
+     */
+    use NormalizeIntCapableTrait;
+
     /**
      * @since [*next-version*]
      *
