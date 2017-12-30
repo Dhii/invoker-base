@@ -15,7 +15,7 @@ trait CreateInvocationFailureExceptionCapableTrait
      * @since [*next-version*]
      *
      * @param null|string|Stringable       $message  The error message, if any.
-     * @param null|int|string|Stringable   $code     The error code, if any.
+     * @param null|int|string|Stringable   $code     The numeric error code, if any.
      * @param RootException|null           $previous The inner exception, if any.
      * @param CommandInvokerInterface|null $invoker  The problematic invoker, if any.
      * @param string|Stringable|null       $command  The command that failed, if any.
