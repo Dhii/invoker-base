@@ -5,6 +5,7 @@ namespace Dhii\Invocation\Exception;
 use Dhii\Invocation\CommandInvokerInterface;
 use Exception as RootException;
 use Dhii\Util\String\StringableInterface as Stringable;
+use InvalidArgumentException;
 
 trait CreateInvocationFailureExceptionCapableTrait
 {
@@ -19,6 +20,8 @@ trait CreateInvocationFailureExceptionCapableTrait
      * @param CommandInvokerInterface|null $invoker  The problematic invoker, if any.
      * @param string|Stringable|null       $command  The command that failed, if any.
      * @param array|null                   $args     The command arguments, if any.
+     *
+     * @throws InvalidArgumentException If an argument does not match the type spec, or cannot be normalized to it.
      *
      * @return CommandInvokerException The new exception.
      */
