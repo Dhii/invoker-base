@@ -6,6 +6,7 @@ use Exception as RootException;
 use Dhii\Invocation\CommandInvokerInterface;
 use Dhii\Util\Normalization\NormalizeStringCapableTrait;
 use Dhii\Util\Normalization\NormalizeIntCapableTrait;
+use Dhii\Util\String\StringableInterface as Stringable;
 
 /**
  * An exception that occurs in relation to a command invoker.

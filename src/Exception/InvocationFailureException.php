@@ -9,6 +9,7 @@ use Dhii\Invocation\CommandAwareTrait;
 use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
 use Dhii\Util\Normalization\NormalizeStringCapableTrait;
 use Dhii\Util\Normalization\NormalizeIntCapableTrait;
+use Dhii\Util\String\StringableInterface as Stringable;
 
 /**
  * An exception that occurs in relation to a command invoker.
