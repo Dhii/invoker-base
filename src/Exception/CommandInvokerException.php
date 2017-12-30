@@ -6,6 +6,8 @@ use Exception as RootException;
 use Dhii\Invocation\CommandInvokerInterface;
 use Dhii\Util\Normalization\NormalizeStringCapableTrait;
 use Dhii\Util\Normalization\NormalizeIntCapableTrait;
+use Dhii\Util\String\StringableInterface as Stringable;
+use InvalidArgumentException;
 
 /**
  * An exception that occurs in relation to a command invoker.
@@ -32,9 +34,11 @@ class CommandInvokerException extends AbstractBaseCommandInvokerException
      * @since [*next-version*]
      *
      * @param string|Stringable|null       $message  The error message, if any.
-     * @param int|null                     $code     The error code, if any.
+     * @param int|string|Stringable|null   $code     The numeric error code, if any.
      * @param RootException|null           $previous The previous exception, if any.
      * @param CommandInvokerInterface|null $invoker  The problematic invoker, if any.
+     *
+     * @throws InvalidArgumentException If an argument does not match the type spec, or cannot be normalized to it.
      */
     public function __construct($message = null, $code = null, RootException $previous = null, CommandInvokerInterface $invoker = null)
     {
