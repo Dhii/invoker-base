@@ -23,7 +23,7 @@ trait CreateInvocationFailureExceptionCapableTrait
      *
      * @throws InvalidArgumentException If an argument does not match the type spec, or cannot be normalized to it.
      *
-     * @return CommandInvokerException The new exception.
+     * @return InvocationFailureException The new exception.
      */
     protected function _createInvocationFailureException(
             $message = null,
